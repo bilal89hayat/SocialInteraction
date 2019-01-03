@@ -1,13 +1,10 @@
 package com.social.blog.user.model;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -18,6 +15,7 @@ import javax.validation.constraints.Size;
 public class UserProfile {
 
 	@Id
+	@Column(name="user_prof_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
@@ -30,22 +28,20 @@ public class UserProfile {
 	@Size(max = 15)
 	private String phoneNumber;
 
-	
-
-	
-	
-	
+	/*@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="HOME_ADDRESS_ID")
+	private User user;
+*/
 	public UserProfile() {
 	}
 
 	public UserProfile(Long id, @Size(max = 15) String firstName, @Size(max = 15) String lastName,
 			@Size(max = 15) String phoneNumber) {
-		
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
-		
+		//this.user = user;
 	}
 
 	public Long getId() {
@@ -80,6 +76,12 @@ public class UserProfile {
 		this.phoneNumber = phoneNumber;
 	}
 
-	
+	/*public User getUser() {
+		return user;
+	}
 
+	public void setUser(User user) {
+		this.user = user;
+	}
+*/
 }

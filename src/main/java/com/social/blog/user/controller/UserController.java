@@ -36,6 +36,14 @@ public class UserController {
 
 		return userRepository.save(user);
 	}
+	
+	@PostMapping("/usersprofile")
+	public UserProfile createUser(@Valid @RequestBody UserProfile userp) throws JsonProcessingException {
+
+		System.out.println("user : " + mapper.writeValueAsString(userp));
+
+		return userProfileRepository.save(userp);
+	}
 
 	@GetMapping("/users")
 	public List<User> getAllUsers() {
