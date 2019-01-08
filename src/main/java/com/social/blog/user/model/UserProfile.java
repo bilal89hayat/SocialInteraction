@@ -28,10 +28,7 @@ public class UserProfile {
 	@Size(max = 15)
 	private String phoneNumber;
 
-	/*@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="HOME_ADDRESS_ID")
-	private User user;
-*/
+	
 	public UserProfile() {
 	}
 
@@ -41,7 +38,7 @@ public class UserProfile {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
-		//this.user = user;
+		
 	}
 
 	public Long getId() {
@@ -76,12 +73,5 @@ public class UserProfile {
 		this.phoneNumber = phoneNumber;
 	}
 
-	/*public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-*/
+	
 }

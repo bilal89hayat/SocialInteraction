@@ -1,4 +1,4 @@
-package com.social.blog.repository;
+package com.social.blog.userprofile.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
