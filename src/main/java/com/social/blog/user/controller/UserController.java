@@ -13,13 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.social.blog.repository.UserAddressRepository;
 import com.social.blog.user.model.User;
-import com.social.blog.user.model.UserAddress;
 import com.social.blog.user.model.UserProfile;
-import com.social.blog.user.service.UserRepository;
 import com.social.blog.user.service.UserService;
-import com.social.blog.userprofile.service.UserProfileRepository;
 import com.social.blog.userprofile.service.UserProfileService;
 
 
