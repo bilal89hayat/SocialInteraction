@@ -16,6 +16,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.annotations.ApiModelProperty;
+
 
 
 
@@ -28,22 +30,27 @@ public class Note {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(notes = "The database generated product ID")
 	private Long id;
 
 	@NotBlank
+	@ApiModelProperty(notes = "Title")
 	private String title;
 
 	@NotBlank
+	@ApiModelProperty(notes = "Content")
 	private String content;
 
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
+	@ApiModelProperty(notes = "The database generated created date")
 	private Date createdAt;
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
+	@ApiModelProperty(notes = "The database generated updated date")
 	private Date updatedAt;
 
 	public Long getId() {
